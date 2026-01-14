@@ -1,0 +1,13 @@
+gateway_services:
+  - ref: code-breakers-gw-svc
+    control_plane: !ref code-breakers-cp#id
+    _external:
+      selector:
+        matchFields:
+          name: codebreakers-api
+
+api_implementations: 
+  - ref: code-breakers-api-impl 
+    service:
+      control_plane_id: !ref code-breakers-cp#id
+      id: !ref code-breakers-gw-svc#id
