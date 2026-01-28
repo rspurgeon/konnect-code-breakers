@@ -1,6 +1,6 @@
 portals:
-  - ref: code-breakers-portal
-    name: "code-breakers"
+  - ref: codebreakers-portal
+    name: "codebreakers"
     display_name: "Codebreakers"
     description: "Developer portal for the Codebreakers API example."
     authentication_enabled: false
@@ -17,7 +17,7 @@ portals:
         description: "A Mastermind-style API demo for Kong Konnect."
         visibility: "public"
         status: "published"
-        content: !file ./pages/home.md
+        content: !file ../portal/pages/home.md
 
       - ref: apis
         slug: "apis"
@@ -25,7 +25,7 @@ portals:
         description: "API products available in this portal."
         visibility: "public"
         status: "published"
-        content: !file ./pages/apis.md
+        content: !file ../portal/pages/apis.md
 
       - ref: getting-started
         slug: "getting-started"
@@ -33,4 +33,4 @@ portals:
         description: "How to authenticate and make your first requests."
         visibility: "public"
         status: "published"
-        content: !file ./pages/getting-started.md
+        content: !file ../portal/pages/getting-started.md

@@ -1,5 +1,5 @@
 application_auth_strategies:
-  - ref: key-auth
+  - ref: key-auth-strategy
     name: key-auth
     display_name: API Key Authentication
     strategy_type: key_auth

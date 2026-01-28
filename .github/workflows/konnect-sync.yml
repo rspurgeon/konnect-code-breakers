@@ -5,7 +5,8 @@ on:
     branches:
       - main
     paths:
-      - openapi.yaml
+      - api/**
+      - portal/**
       - konnect/**
 
 jobs:
