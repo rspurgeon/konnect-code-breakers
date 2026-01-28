@@ -31,7 +31,7 @@ Required sequence:
 
 - `api/openapi.yaml`: source of truth for the Codebreakers API.
 - `konnect/`: Konnect declarative config.
-  - `konnect/control-planes.yaml`: creates the control plane (`codebreakers`) and configures `_deck`.
+  - `konnect/control-planes.yaml`: creates the control plane (`code-breakers`) and configures `_deck`.
   - `konnect/portals.yaml`: portal definition and pages.
   - `konnect/apis.yaml`: API, versions, documents, and portal publication.
   - `konnect/api-implementations.yaml`: API Implementation resources and external gateway service selector.

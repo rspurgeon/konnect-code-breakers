@@ -1,6 +1,6 @@
 portals:
-  - ref: codebreakers-portal
-    name: "codebreakers"
+  - ref: code-breakers-portal
+    name: "code-breakers"
     display_name: "Codebreakers"
     description: "Developer portal for the Codebreakers API example."
     authentication_enabled: false

@@ -11,7 +11,7 @@ demonstrates how to coordinate `kongctl` (Konnect resources) with `decK`
 - Do **not** commit generated `decK` gateway config; it is produced on the fly in `.konnect/kong.yaml`.
 - Konnect declarative configs live under `konnect/`.
 - `!file` references may include parent path traversal; keep existing references.
-- Control plane name is `codebreakers` (defined in config).
+- Control plane name is `code-breakers` (defined in config).
 - `scripts/konnect-sync.sh` expects `kongctl` and `deck` in PATH.
 
 ## Repository map

@@ -1,5 +1,5 @@
 apis:
-  - ref: codebreakers-api
+  - ref: code-breakers-api
     name: !file ../api/openapi.yaml#info.title
     description: !file ../api/openapi.yaml#info.description
     version: !file ../api/openapi.yaml#info.version
@@ -8,32 +8,32 @@ apis:
       protocol: rest
 
     versions:
-      - ref: codebreakers-version
+      - ref: code-breakers-version
         version: !file ../api/openapi.yaml#info.version
         spec: !file ../api/openapi.yaml
 
     documents:
-      - ref: codebreakers-doc-getting-started
+      - ref: code-breakers-doc-getting-started
         title: "Codebreakers API: Getting Started"
-        slug: codebreakers-getting-started
+        slug: code-breakers-getting-started
         status: published
         content: !file ../api/docs/getting-started.md
 
-      - ref: codebreakers-doc-authentication
+      - ref: code-breakers-doc-authentication
         title: "Codebreakers API: Authentication"
-        slug: codebreakers-authentication
+        slug: code-breakers-authentication
         status: published
         content: !file ../api/docs/authentication.md
 
-      - ref: codebreakers-doc-errors
+      - ref: code-breakers-doc-errors
         title: "Codebreakers API: Error Handling"
-        slug: codebreakers-errors
+        slug: code-breakers-errors
         status: published
         content: !file ../api/docs/errors.md
 
     publications:
-      - ref: codebreakers-publication
-        portal_id: !ref codebreakers-portal#id
+      - ref: code-breakers-publication
+        portal_id: !ref code-breakers-portal#id
         visibility: public
         auth_strategy_ids:
           - !ref key-auth-strategy#id
