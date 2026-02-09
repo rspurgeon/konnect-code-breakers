@@ -20,6 +20,7 @@ export interface Game {
   maxAttempts: number;
   attemptsUsed: number;
   guesses: Guess[];
+  revealedCode?: string;
   createdAt: string;
   updatedAt: string;
 }

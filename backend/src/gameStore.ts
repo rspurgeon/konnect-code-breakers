@@ -7,6 +7,19 @@ export class GameStore {
   private readonly games = new Map<number, GameRecord>();
   private nextId = 1;
 
+  private toPublicGame(record: GameRecord): Game {
+    const base = {
+      ...record.game,
+      guesses: [...record.game.guesses]
+    };
+
+    if (record.game.status === "lost") {
+      return { ...base, revealedCode: record.secretCode };
+    }
+
+    return base;
+  }
+
   createGame(ownerId: string): Game {
     const now = new Date().toISOString();
     const game: Game = {
@@ -30,7 +43,7 @@ export class GameStore {
     this.games.set(this.nextId, record);
     this.nextId += 1;
 
-    return { ...game, guesses: [...game.guesses] };
+    return this.toPublicGame(record);
   }
 
   getGame(gameId: number, ownerId: string): Game | undefined {
@@ -38,7 +51,7 @@ export class GameStore {
     if (!record || record.ownerId !== ownerId) {
       return undefined;
     }
-    return { ...record.game, guesses: [...record.game.guesses] };
+    return this.toPublicGame(record);
   }
 
   createGuess(gameId: number, ownerId: string, guessValue: string): GuessResult {

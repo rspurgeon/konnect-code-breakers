@@ -13,11 +13,16 @@ function getOwnerId(): string {
   return generated;
 }
 
-function buildHeaders() {
-  return {
-    "Content-Type": "application/json",
+function buildHeaders({ withJsonBody = false }: { withJsonBody?: boolean } = {}) {
+  const headers: Record<string, string> = {
     [CONSUMER_HEADER]: getOwnerId()
   };
+
+  if (withJsonBody) {
+    headers["Content-Type"] = "application/json";
+  }
+
+  return headers;
 }
 
 async function parseResponse<T>(response: Response): Promise<T> {
@@ -48,7 +53,7 @@ export async function fetchGame(gameId: number): Promise<Game> {
 export async function submitGuess(gameId: number, guess: string): Promise<GuessResult> {
   const response = await fetch(`${API_BASE_URL}/games/${gameId}/guesses`, {
     method: "POST",
-    headers: buildHeaders(),
+    headers: buildHeaders({ withJsonBody: true }),
     body: JSON.stringify({ guess })
   });
 
