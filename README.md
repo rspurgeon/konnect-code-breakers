@@ -84,7 +84,7 @@ Set these repository secrets for CI:
 
 ## Local development
 
-This repository now includes both the backend service and a browser client.
+This repository includes both the backend service and a browser client.
 
 ### Backend service (Fastify + TypeScript)
 
